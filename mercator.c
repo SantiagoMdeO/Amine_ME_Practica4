@@ -46,7 +46,7 @@ void proc(int proc_num)
 
     // Espera a que master_proc ponga la bandera en 1 para iniciar
     while(!(shared->start_all));
-    printf("process[%d]\n", i);
+    printf("process[%d]\n", proc_num);
     // Cada proceso realiza el cálculo de los términos que le tocan
     shared->sums[proc_num] = 0;
     for(i=proc_num; i<SERIES_MEMBER_COUNT;i+=NPROCS)
