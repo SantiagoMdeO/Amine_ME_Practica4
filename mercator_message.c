@@ -19,7 +19,7 @@
 #include <sys/wait.h>
 
 #define NPROCS 4
-#define SERIES_MEMBER_COUNT 20000
+#define SERIES_MEMBER_COUNT 200000
 
 #define FLAGS 0                 // Default
 #define MAXMSG 2                // Máximo un mensaje en el buzón //segun yo no deberia haber razon para mas de dos mensajes
