@@ -204,7 +204,7 @@ int main(){
     
     printf("Tiempo = %lld segundos\n", elapsed_time);
     printf("El resultado es %10.8f\n", total);
-    printf("Llamando a la función ln(1 + %f) = %10.8f\n",shared->x_val, log(1+shared->x_val));
+    printf("Llamando a la función ln(1 + 1.0) = %10.8f\n", log(1+shared->x_val));
 
     //at the end do this f***er
     //we could maybe ask chat later, if we can send directly a float
