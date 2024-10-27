@@ -49,7 +49,7 @@ void proc(int proc_num, mqd_t queue_id){
     double value_to_calculate = 0;
     if(mq_receive(queue_id,mensaje,attr.mq_msgsize,&prority)==-1){
         fprintf(stderr,"\t\t\tError al recibir valor inicial como en el archivo de txt\n");
-        printf("thus everything afterthis is gonna be wrong\n")
+        printf("thus everything afterthis is gonna be wrong\n");
 
     }
     else{
@@ -69,7 +69,7 @@ void proc(int proc_num, mqd_t queue_id){
     //this could pose a proble, if we try to do the sequence with a little amount of iterations
     //as there is one message queue, and somehow we could send incorrect values
 
-    char mensaje[MSGSIZE]; //i think as long as the size is enough we good
+    
     sprintf(mensaje,"%lf", sum);
     if(mq_send(queue_id, mensaje,attr.mq_msgsize,0)==-1)
         fprintf(stderr,"Error al mandar sumas de vuelta\n"); 
@@ -108,7 +108,7 @@ void master_proc(mqd_t queue_id){
         double total_from_a_process = 0;
         if(mq_receive(queue_id,mensaje,attr.mq_msgsize,&prority)==-1){
             fprintf(stderr,"\t\t\tError al recibir valor inicial como en el archivo de txt\n");
-            printf("thus everything afterthis is gonna be wrong\n")
+            printf("thus everything afterthis is gonna be wrong\n");
 
         }
         else{
@@ -116,11 +116,11 @@ void master_proc(mqd_t queue_id){
             total_from_a_process = atof(mensaje); 
             printf("\t\tm inicial Float[%f]\n",total_from_a_process);     // Imprimir el mensaje
         }
-        total_sum += total_from_a_process1;
+        total_sum += total_from_a_process;
     }
 
     // Send back the total value
-    char mensaje[MSGSIZE]; 
+    
     sprintf(mensaje,"%lf", total_sum);
     if(mq_send(queue_id, mensaje,attr.mq_msgsize,0)==-1)
         fprintf(stderr,"Error al mandar TOTAAL de sumas de vuelta\n"); 
@@ -189,7 +189,7 @@ int main(){
     double total;
     if(mq_receive(queue_id,mensaje,attr.mq_msgsize,&prority)==-1){
         fprintf(stderr,"\t\t\tError al recibir valor FINAL \n");
-        printf("thus everything afterthis is gonna be wrong\n")
+        printf("thus everything afterthis is gonna be wrong\n");
 
     }
     else{
