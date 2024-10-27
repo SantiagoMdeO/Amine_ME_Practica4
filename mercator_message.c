@@ -13,6 +13,11 @@
 #include <sys/wait.h>
 #include <sys/shm.h>
 
+#include <string.h>
+#include <fcntl.h>
+#include <mqueue.h>
+#include <sys/wait.h>
+
 #define NPROCS 4
 #define SERIES_MEMBER_COUNT 200000
 
